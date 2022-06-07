@@ -26,20 +26,6 @@ const ChatInput = () => {
         setMessage("");
     }
 
-    const handle = (e) => {
-        if (e.key === "Enter") {
-            if (!message.length) {
-                alert("Message is Empty");
-
-                return;
-            }
-
-            handleSubmit();
-        } else {
-            return;
-        }
-    }
-
 
     useEffect(() => {
         socket.on('newMessage', ({createdMessage}) => {
@@ -59,7 +45,6 @@ const ChatInput = () => {
                             placeholder="Введите текст сообщения…"
                             rows={1}
                             onChange={(event => setMessage(event.target.value))}
-                            onKeyPress={(e) => handle(e)}
                         />
                 </div>
                 <BsEmojiSmile/>
