@@ -1,0 +1,1 @@
+export const selectUser = (payload) => ({type: "SELECT_USER", payload});
